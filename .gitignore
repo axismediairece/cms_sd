@@ -6,8 +6,11 @@ lib-cov
 *.out
 *.pid
 *.gz
+<<<<<<< HEAD
 *README.md
 config/config.coffee
+=======
+>>>>>>> 286e4b807e76d5b90fd1feffb045eeaf54b740ec
 
 pids
 logs
