@@ -1,0 +1,17 @@
+ul.nav.pull-right
+	li
+		a(href="/") Cadastrar-me
+	li.divider-vertical
+	li.dropdown
+		a.dropdown-toggle(href="#",data-toggle="dropdown")
+			i.icon-signin
+			| Entrar 
+			strong.caret
+		.dropdown-menu(style="padding-bottom:0")
+			form(style="margin-bottom:0")
+				.modal-body
+					include auth
+				.modal-footer
+					button.btn.btn-small.btn-link Recuperar senha
+					button.btn.btn-small.btn-success Entrar
+a.btn.btn-primary Teste

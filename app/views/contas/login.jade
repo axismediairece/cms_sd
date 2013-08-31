@@ -1,0 +1,20 @@
+extends ../layouts/page-blank.jade
+
+block Conteudo
+	h1 Página de login
+	.row
+		.span4	Test
+		.span3 Teste
+		.span5
+			form.form-horizontal(ng-controller="FormAuth",ng-submit="FormAuthSubmit()")
+				.modal
+					.modal-header
+						h3 Login
+					.modal-body
+							include forms/auth
+					.modal-footer
+						a.pull-left(href="/auth/facebook") Entrar com conta do facebook
+						button.btn.btn-primary(type="submit",gn-class="{}") Entrar
+
+block Script
+	script(src="/js/auth.js")

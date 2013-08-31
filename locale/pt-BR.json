@@ -1,0 +1,14 @@
+{
+	"titulo": "Seja Bem Vindo %s",
+	"_titulo": "_titulo",
+	"db_conectar_criar": "Criando conexão com o banco de dados",
+	"db_conectar_sucesso": "Conectou com o banco de dados com sucesso.",
+	"db_conectar_erro": "Erro ao conectar com o banco de dados",
+	"campo_nome_vazio": "campo_nome_vazio",
+	"campo_email_vazio": "campo_email_vazio",
+	"campo_hashed_password_vazio": "campo_hashed_password_vazio",
+	"senha_invalida": "senha_invalida",
+	"A ação não existe": "A ação não existe",
+	"Sua função está ultrapassada": "Sua função está ultrapassada",
+	"Você não possui esta permissão": "Você não possui esta permissão"
+}

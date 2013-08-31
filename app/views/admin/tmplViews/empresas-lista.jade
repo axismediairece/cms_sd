@@ -1,0 +1,65 @@
+
+.row-fluid
+	.span8
+		.navbar
+			.btn-group
+				a.btn.btn-success
+					i.icon-pencil
+				a.btn
+					i.icon-edit
+				a.btn
+					i.icon-trash
+			a.btn(ng-click="TogglePanelFilter()",ng-class="{active:PanelFilterStatus}")
+				i.icon-cog
+			form.pull-right.navbar-search.custom-search-form(ng-submit="Pesquisar()")
+				.input-prepend
+					input.search-query.span10(type="text",ng-model="queryParams.nome",placeholder="Pesquisar")
+					button.btn(type="submit")
+						i.icon-search
+		.well(ng-show="PanelFilterStatus")
+			form.form-horizontal(ng-submit="Pesquisar()")
+				.group-controls
+					label.control-label Resultados por página
+					.controls
+						input(ng-model="queryParams.$limitPag")
+		#EmpresasLista
+			table.table.table-bordered.table-striped.table-condensed.table-hover(ng-show="_empresas.length>0")
+				thead
+					tr
+						th(width="20")
+							input(ng-model="selectAll",type="checkbox")
+						th Nome
+						th Descrição
+						th(width="30")
+				tbody
+					tr(ng-repeat="emp in _empresas")
+						td
+							input(type="checkbox")
+						td {{emp.nome}}
+						td {{emp.descricao}}
+						td
+							a.btn.btn-small.btn-danger(ng-click="emp.destroy()")
+								i.icon-trash
+			.well(ng-show="!_empresas.length")
+				h3 Não foi encontrado nenhum resultado
+			pagination(rotate="false",num-pages="queryParams.$totalPags",current-page="queryParams.$pag",max-size="queryParams.$limitPag",class="pagination-small",boundary-links="true")
+			tabset(type="'tabs'")
+				tab(heading="Vertical 1") Vertical content 1
+				tab(heading="Vertical 2") Vertical content 2
+	.span4
+		
+		tabset(type="'tabs'")
+			tab(heading="Adicionar")
+				form(ng-submit="CriarEmpresa()")
+					.modal-body
+							.group-controls
+								label.control-label Nome
+								.controls
+									input(type="text",ng-model="newEmpParams.nome")
+							.group-controls
+								label.control-label Descrição
+								.controls
+									input(type="text",ng-model="newEmpParams.descricao")
+					.modal-footer
+						button.btn.btn-primary(type="submit") Adicionar
+			tab(heading="Configurações") Vertical content 2

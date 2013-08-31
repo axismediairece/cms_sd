@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(ng-app="axismedia")
+	head
+		link(href="/css/appui.css",rel="stylesheet",type="text/css")
+		title Página em branco
+	body
+		.navbar.navbar-static-top
+			.navbar-inner
+				.container
+					a.brand	Axis Media
+					ul.nav.pull-right
+						li
+							a(href="#") Mas
+					include ../contas/navbar-user
+
+		.container
+			.row
+				.span12
+					block Conteudo
+		.scpt
+			script(language="javascript",src="/js/apptools.js")
+			script(language="javascript",src="/js/ng-axismedia.js")
+			block Script

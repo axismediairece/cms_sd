@@ -1,0 +1,5 @@
+/public/**
+*.css
+:(\d)*\.js
+./README.md
+*.jade

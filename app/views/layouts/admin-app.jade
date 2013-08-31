@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(ng-app="signplay",ng-controller="SignPlayApp")
+	head
+		link(type="text/css",rel="stylesheet",href="/admin/css/style.css")
+		link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400',rel='stylesheet',type='text/css')
+		title(data-ng-model="PageTitle")
+		meta(name="viewport",content="width=device-width,initial-scale=1.0")
+	body
+		div(style="position:relative;z-index:999")
+			.notifications.top-left
+			.notifications.top-right
+			.notifications.bottom-left
+			.notifications.bottom-right
+			.notifications.bottom-center
+			.notifications.center
+		.navbar.navbar-static-top.navbar-inverse
+			.navbar-inner
+				a.btn.btn-navbar.pull-left(data-toggle="collapse",data-target=".MenuSidebar")
+					span.icon-reorder
+				a.brand  Sinalização Digital
+				ul.nav.MenuSidebar
+					li
+						a(href="#") Max {{resourceBundle.Dashboard||"Max"}}
+					li.active
+						a(href="#") Max
+				.pull-right
+					include ../contas/parts/navbar-user
+		.row
+			.navbar.navbar-static-top
+				.navbar-inner
+					.container
+						ul.nav
+							li
+								a(href="#")
+		.fluid-container
+			.fluid-sidebar-left.MenuSidebar
+				.row-fluid
+					.span12
+						include ../admin/parts/sidebar
+			.fluid-content
+				ul.breadcrumb
+					li
+						a(href="#") Empresas 
+						span.divider / 
+					li
+						a(href="#") Minas Calçados 
+						span.divider / 
+					li
+						Dados
+
+				block Conteudo
+		script(language="javascript",src="/admin/app.js")
